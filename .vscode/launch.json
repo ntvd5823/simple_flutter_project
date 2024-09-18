@@ -12,6 +12,12 @@
             "program": "bin/server.dart"
         },
         {
+            "name": "frontend",
+            "cwd": "frontend",
+            "request": "launch",
+            "type": "dart",
+        },
+        {
             "name": "frontend web",
             "cwd": "frontend",
             "request": "launch",
