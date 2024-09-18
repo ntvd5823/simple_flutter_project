@@ -61,13 +61,16 @@ Future<Response> _submitHandler(Request req) async {
       // Tạo phản hồi chào mừng
       final response = {'message': 'Chào mừng $name'};
       // Trả về phản hồi với statusCode 200 và nội dung JSON
-      return Response.ok(json.encode(response), headers: _headers);
+      return Response.ok(
+        json.encode(response),
+        headers: _headers,
+      );
     } else {
       // Tạo phản hồi yêu cầu cung cấp tên
       final response = {'message': 'Server không nhận được tên của bạn.'};
       // Trả về phản hồi với statusCode 400 và nội dung JSON
-      return Response.ok(
-        json.encode(response),
+      return Response.badRequest(
+        body: json.encode(response),
         headers: _headers,
       );
     }
